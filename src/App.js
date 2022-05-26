@@ -80,15 +80,11 @@ export default function App() {
                     setCorrectAnswers(prevState => prevState + 1)
                 }
 
-                if (
-                    answer.answer === item.correct
-                ) {
+                if ( answer.answer === item.correct) {
                     return {...answer, correct: true, isHeld: false}
                 }
 
-                else if (
-                    answer.isHeld && answer.answer !== item.correct
-                ) {
+                else if (answer.isHeld && answer.answer !== item.correct) {
                     return {...answer, wrong: true, isHeld: false}
                 }
 
@@ -118,12 +114,10 @@ export default function App() {
 
 
     return(
-        <main className="App">
-
+        <main className="">
+            
             {
-                start
-
-                    ? <Action
+                start? <Action
                         questions={questions}
                         holdAnswer={holdAnswer}
                         checkAnswers={checkAnswers}
@@ -131,10 +125,7 @@ export default function App() {
                         result={correctAnswers}
                         playAgain={playAgain}
                     />
-
-                    : <Home
-                        startQuiz={startQuiz}
-                    />
+                    : <Home startQuiz={startQuiz}/>
             }
 
         </main>

@@ -4,7 +4,7 @@ import {nanoid} from "nanoid";
 
 
 export default function Action(props) {
-
+console.log(props)
     const allQuestions = props.questions.map(item => {
         return <Questions
             key={nanoid()}
@@ -15,31 +15,20 @@ export default function Action(props) {
 
     return(
 
-        <div className="Action">
+        <div className="bg-green-600 h-screen">
+            <div className="w-3/4 mx-auto bg-yellow-900 mt-12">
+                {allQuestions}
+            </div>
+            <div className="bg-red-800">
+                {props.checked && <span className="result-msg">{`You scored ${props.result}/5 correct answers`}</span>}
 
-            {allQuestions}
-
-            <div className="btn-container">
-
-                {props.checked
-                    && <span className="result-msg">
-                    {`You scored ${props.result}/5 correct answers`}
-                </span>}
-
-                {
-                    props.checked
-
-                    ? <button className="Action__btn"
-                              onClick={props.playAgain}
-                        >
-                            Play again
+                {props.checked ? 
+                    <button className="Action__btn" onClick={props.playAgain}>
+                        Play again
                     </button>
-
-                    : <button className="Action__btn"
-                              onClick={props.checkAnswers}
-                        >
-                            Check answers
+                    : <button className="Action__btn" onClick={props.checkAnswers}>
+                        Check answers
                     </button>
                 }
             </div>
-            </div>)}
+        </div>)}
