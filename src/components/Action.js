@@ -15,7 +15,7 @@ console.log(props)
 
     return(
 
-        <div className="bg-green-600 h-screen">
+        <div className="bg-green-600">
             <div className="w-3/4 mx-auto bg-yellow-900 mt-12">
                 {allQuestions}
             </div>
