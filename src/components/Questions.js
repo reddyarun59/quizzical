@@ -11,7 +11,7 @@ export default function Question(props) {
         }
 
         return (
-            <div className="mr-4 border-2 border-zinc-200 cursor-pointer" key={item.id} onClick={(e) => { props.holdAnswer(item.id, e.target)}} style={styles}>
+            <div className="mx-2 border-1 px-2 py-1 rounded-lg border-zinc-200 cursor-pointer" key={item.id} onClick={(e) => { props.holdAnswer(item.id, e.target)}} style={styles}>
                 {decode(item.answer)}
             </div>
         )
@@ -19,15 +19,14 @@ export default function Question(props) {
     
     return(
 
-        <section className="bg-rose-500">
-            <div className="">
-                <h3 className="text-xl bg-indigo-400">{decode(props.question.ask)}</h3>
-                <div className="flex text-lg px-2">
+        
+            <div className="py-4">
+                <h3 className="text-xl">{decode(props.question.ask)}</h3>
+                <div className="flex text-lg px-2 pt-2 justify-around ">
                     {allAnswers}
                 </div>
                 <hr className="w-2/4"></hr>
             </div>
-        </section>
-
+        
     )
 }

@@ -15,18 +15,19 @@ console.log(props)
 
     return(
 
-        <div className="bg-green-600">
-            <div className="w-3/4 mx-auto bg-yellow-900 mt-12">
+        <div className="flex flex-col mx-auto bg-slate-200 max-w-screen-xl">
+            <h1 className="flex justify-center pt-4 text-2xl font-bold">Quizzical</h1>
+            <div className="mx-auto">
                 {allQuestions}
             </div>
-            <div className="bg-red-800">
-                {props.checked && <span className="result-msg">{`You scored ${props.result}/5 correct answers`}</span>}
+            <div className="mx-auto py-16">
+                {props.checked && <span className="px-4">{`You scored ${props.result}/5 correct answers`}</span>}
 
                 {props.checked ? 
-                    <button className="Action__btn" onClick={props.playAgain}>
+                    <button className="" onClick={props.playAgain} >
                         Play again
                     </button>
-                    : <button className="Action__btn" onClick={props.checkAnswers}>
+                    : <button className="" onClick={props.checkAnswers}>
                         Check answers
                     </button>
                 }

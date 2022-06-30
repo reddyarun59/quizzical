@@ -114,7 +114,7 @@ export default function App() {
 
 
     return(
-        <main className="">
+        <main className="px-1">
             
             {
                 start? <Action

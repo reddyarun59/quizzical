@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Home = (props) => {
-   console.log(props)
+
   return (
     <div className="flex flex-col justify-center h-screen">
         <h1 className="mx-auto font-karla text-3xl">Quizzical</h1>
